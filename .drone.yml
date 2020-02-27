@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: docker
+name: Images
+
+steps:
+        - name: Lualatex
+          image: plugins/docker
+          settings:
+                registry: quay.io
+                username: $$QUAY_IO_USER
+                password: $$QUAY_IO_PASS
+                repo: nspain/lualatex
+                file: Dockerfile.latex
+                  
