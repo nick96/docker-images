@@ -1,0 +1,10 @@
+FROM fedora:latest
+
+WORKDIR /doc
+
+RUN dnf update -y
+RUN dnf install -y texlive-latex \
+	texlive-collection-latexrecommended \
+	texlive-collection-latexextra
+
+ENTRYPOINT ["lualatex"]
